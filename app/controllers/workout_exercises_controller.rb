@@ -18,6 +18,7 @@ class WorkoutExercisesController < ApplicationController
       sets: params["sets"],
       reps: params["reps"],
       weight: params["weight"],
+      notes: params["notes"],
     )
     if workout_exercise.save
       render json: workout_exercise.as_json
@@ -36,6 +37,7 @@ class WorkoutExercisesController < ApplicationController
     workout_exercise.sets = params["sets"] || workout_exercise.sets
     workout_exercise.reps = params["reps"] || workout_exercise.reps
     workout_exercise.weight = params["weight"] || workout_exercise.weight
+    workout_exercise.notes = params["notes"] || workout_exercise.notes
 
     if workout_exercise.save
       render json: workout_exercise.as_json
