@@ -1,18 +1,18 @@
 class WorkoutExercisesController < ApplicationController
 
   def index
-    workout_exercises = Workout_exercise.all
+    workout_exercises = WorkoutExercise.all
     render json: workout_exercises.as_json
   end
 
   def show
     workout_exercise_id = params["id"]
-    workout_exercise = Workout_exercise.find(workout_exercise_id)
+    workout_exercise = WorkoutExercise.find(workout_exercise_id)
     render json: workout_exercise
   end
 
   def create
-    workout_exercise = Workout_exercise.new(
+    workout_exercise = WorkoutExercise.new(
       workout_id: params["workout_id"],
       exercise_id: params["exercise_id"],
       sets: params["sets"],
@@ -29,7 +29,7 @@ class WorkoutExercisesController < ApplicationController
 
   def update
     workout_exercise_id = params[:id]
-    workout_exercise = Workout_exercise.find_by(id: workout_exercise_id)
+    workout_exercise = WorkoutExercise.find_by(id: workout_exercise_id)
 
     workout_exercise.workout_id = params["workout_id"] || workout_exercise.workout_id
     workout_exercise.exercise_id = params["exercise_id"] || workout_exercise.exercise_id
@@ -47,7 +47,7 @@ class WorkoutExercisesController < ApplicationController
 
   def destroy
     workout_exercise_id = params[:id]
-    workout_exercise = Workout_exercise.find_by(id: workout_exercise_id)
+    workout_exercise = WorkoutExercise.find_by(id: workout_exercise_id)
     workout_exercise.destroy
     render json: {message: "Workout_exercise successfully destroyed!"}    
   end

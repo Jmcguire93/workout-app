@@ -15,7 +15,7 @@ class WorkoutsController < ApplicationController
   def create
     workout = Workout.new(
       name: params["name"],
-      description: params["description"]
+      description: params["description"],
       user_id: params["user_id"],
     )
     if workout.save
