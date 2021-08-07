@@ -56,5 +56,6 @@ class WorkoutExercisesController < ApplicationController
     else
       render json: { errors: workout_exercise.errors.full_messages },
       status: :unprocessable_entity   
+    end
   end
 end
