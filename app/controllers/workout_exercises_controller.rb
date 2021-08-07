@@ -32,8 +32,8 @@ class WorkoutExercisesController < ApplicationController
     workout_exercise_id = params[:id]
     workout_exercise = WorkoutExercise.find_by(id: workout_exercise_id)
 
-    workout_exercise.workout_id = params["workout_id"] || workout_exercise.workout_id
-    workout_exercise.exercise_id = params["exercise_id"] || workout_exercise.exercise_id
+    # workout_exercise.workout_id = params["workout_id"] || workout_exercise.workout_id
+    # workout_exercise.exercise_id = params["exercise_id"] || workout_exercise.exercise_id
     workout_exercise.sets = params["sets"] || workout_exercise.sets
     workout_exercise.reps = params["reps"] || workout_exercise.reps
     workout_exercise.weight = params["weight"] || workout_exercise.weight
@@ -50,7 +50,11 @@ class WorkoutExercisesController < ApplicationController
   def destroy
     workout_exercise_id = params[:id]
     workout_exercise = WorkoutExercise.find_by(id: workout_exercise_id)
-    workout_exercise.destroy
-    render json: {message: "Workout_exercise successfully destroyed!"}    
+    
+    if workout_exercise.destroy
+      render json: { message: "Workout_exercise successfully destroyed!" }
+    else
+      render json: { errors: workout_exercise.errors.full_messages },
+      status: :unprocessable_entity   
   end
 end
