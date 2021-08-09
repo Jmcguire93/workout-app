@@ -1,6 +1,6 @@
 user = User.create!([
-  { username: "Jmcguire93", email: "james@example.com", password_digest: "password" },
-  { username: "Test", email: "test@example.com", password_digest: "password" },
+  { username: "Jmcguire93", email: "james@example.com", password: "password" },
+  { username: "Test", email: "test@example.com", password: "password" },
 ])
 
 workout = Workout.create!([
