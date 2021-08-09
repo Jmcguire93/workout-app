@@ -10,11 +10,12 @@ class ExercisesController < ApplicationController
     exercise = Exercise.find(exercise_id)
     render json: exercise
   end
-
+  
+  # #Testing actions, we don't want users to manipulate the exercise database.
   # def create
   #   exercise = Exercise.new(
   #     name: params["name"],
-  #     muscle_group: params["muscle_group"]
+  #     muscle_group: params["muscle_group"],
   #     instructions: params["instructions"],
   #     image: params["image"],
   #   )
@@ -24,5 +25,12 @@ class ExercisesController < ApplicationController
   #     render json: {errors: exercise.errors.full_messages}, 
   #     status: 422
   #   end
+  # end
+
+  # def destroy
+  #   exercise_id = params[:id]
+  #   exercise = Exercise.find_by(id: exercise_id)
+  #   exercise.destroy
+  #   render json: {message: "Exercise successfully destroyed!"}    
   # end
 end

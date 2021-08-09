@@ -9,7 +9,7 @@ class WorkoutsController < ApplicationController
   def show
     workout_id = params["id"]
     workout = Workout.find(workout_id)
-    render json: workout
+    render json: workout.as_json
   end
 
   def create
