@@ -32,7 +32,6 @@ class WorkoutsController < ApplicationController
 
     workout.name = params["name"] || workout.name
     workout.description = params["description"] || workout.description
-    # workout.user_id = params["user_id"] || workout.user_id
 
     if workout.save
       render json: workout.as_json
