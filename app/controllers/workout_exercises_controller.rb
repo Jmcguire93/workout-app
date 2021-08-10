@@ -3,7 +3,7 @@ class WorkoutExercisesController < ApplicationController
 
   def index
     workout_exercises = WorkoutExercise.all
-    render json: workout_exercises.as_json
+    render json: workout_exercises
   end
 
   def show
@@ -22,7 +22,7 @@ class WorkoutExercisesController < ApplicationController
       notes: params["notes"],
     )
     if workout_exercise.save
-      render json: workout_exercise.as_json
+      render json: workout_exercise
     else 
       render json: {errors: workout_exercise.errors.full_messages}, 
       status: 422
@@ -41,7 +41,7 @@ class WorkoutExercisesController < ApplicationController
     workout_exercise.notes = params["notes"] || workout_exercise.notes
 
     if workout_exercise.save
-      render json: workout_exercise.as_json
+      render json: workout_exercise
     else
       render json: {errors: workout_exercise.errors.full_messages}, 
       status: 422
