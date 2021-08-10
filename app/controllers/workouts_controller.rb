@@ -3,13 +3,13 @@ class WorkoutsController < ApplicationController
 
   def index
     workouts = Workout.all
-    render json: workouts.as_json
+    render json: workouts
   end
 
   def show
     workout_id = params["id"]
     workout = Workout.find(workout_id)
-    render json: workout.as_json
+    render json: workout
   end
 
   def create
@@ -19,7 +19,7 @@ class WorkoutsController < ApplicationController
       user_id: params["user_id"],
     )
     if workout.save
-      render json: workout.as_json
+      render json: workout
     else 
       render json: {errors: workout.errors.full_messages}, 
       status: 422
@@ -34,7 +34,7 @@ class WorkoutsController < ApplicationController
     workout.description = params["description"] || workout.description
 
     if workout.save
-      render json: workout.as_json
+      render json: workout
     else
       render json: {errors: workout.errors.full_messages}, 
       status: 422

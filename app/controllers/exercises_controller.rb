@@ -2,13 +2,13 @@ class ExercisesController < ApplicationController
   
   def index
     exercises = Exercise.all
-    render json: exercises.as_json
+    render json: exercises
   end
 
   def show
     exercise_id = params["id"]
     exercise = Exercise.find(exercise_id)
-    render json: exercise.as_json
+    render json: exercise
   end
   
 #   #Testing actions, we don't want users to manipulate the exercise database.

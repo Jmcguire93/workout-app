@@ -2,13 +2,13 @@ class UsersController < ApplicationController
 
   def index 
     users = User.all 
-    render json: users.as_json
+    render json: users
   end
 
   def show
     user_id = params[:id]
     user = User.find(user_id)
-    render json: user.as_json
+    render json: user
   end
 
   def create
@@ -24,4 +24,18 @@ class UsersController < ApplicationController
       render json: { errors: user.errors.full_messages }, status: :bad_request
     end
   end
+
+  # Used destroy action to test User validations
+
+  # def destroy
+  #   user_id = params[:id]
+  #   user_id = User.find_by(id: user_id)
+    
+  #   if user_id.destroy
+  #     render json: { message: "User successfully destroyed!" }
+  #   else
+  #     render json: { errors: user_id.errors.full_messages },
+  #     status: :unprocessable_entity   
+  #   end
+  # end
 end
