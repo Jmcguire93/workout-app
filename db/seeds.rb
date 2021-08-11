@@ -4,7 +4,8 @@ WorkoutExercise.create!([
   {sets: 3, reps: 10, weight: 15, notes: "I think I know how to do the thing.", workout_id: 1, exercise_id: 7},
   {sets: 3, reps: 10, weight: 55, notes: "Sweet", workout_id: 1, exercise_id: 3},
   {sets: nil, reps: nil, weight: nil, notes: nil, workout_id: 1, exercise_id: 9},
-  {sets: 3, reps: 15, weight: 0, notes: nil, workout_id: 1, exercise_id: 5}
+  {sets: 3, reps: 15, weight: 0, notes: nil, workout_id: 1, exercise_id: 5},
+  {sets: nil, reps: nil, weight: nil, notes: nil, workout_id: 2, exercise_id: 10}
 ])
 Exercise.create!([
   {name: "Bench Press", muscle_group: "Chest, Triceps and Shoulders", instructions: "1.) Lie on a flat bench with your feet pressing into the floor. 2.) Draw your shoulders down and back to press them into the bench. 3.) Hold the barbell at about shoulder width (Closer grip will emphasize more triceps work, wider grip will emphasize more pectoral work). 4.) On an inhale, lower the barbell slightly below and to your mid-chest, slowly and with control. 5.) Breathe in as you lower the weights until elbows are just below a 90 degree angle or make contact with your chest. 6.) Breathe out as you press your arms upward toward the ceiling.", image: "https://acewebcontent.azureedge.net/exercise-library/large/5-2.jpg"},
@@ -39,7 +40,8 @@ Exercise.create!([
 ])
 Workout.create!([
   {name: "Upperbody", description: "This is a workout for your upperbody!", user_id: 1},
-  {name: "Lowerbody", description: "This is a workout for your lowerbody!", user_id: 2}
+  {name: "Lowerbody", description: "This is a workout for your lowerbody!", user_id: 2},
+  {name: "Core", description: "A workout for your core!", user_id: 1}
 ])
 User.create!([
   {username: "Jmcguire93", email: "james@example.com", password_digest: "$2a$12$XQb2LNPZR97l0.YIiocoae4f9SXn7xTQ.XavkQzzZ2PRN2lbkjCES"},
