@@ -27,15 +27,15 @@ class UsersController < ApplicationController
 
   # Used destroy action to test User validations
 
-  # def destroy
-  #   user_id = params[:id]
-  #   user_id = User.find_by(id: user_id)
+  def destroy
+    user_id = params[:id]
+    user_id = User.find_by(id: user_id)
     
-  #   if user_id.destroy
-  #     render json: { message: "User successfully destroyed!" }
-  #   else
-  #     render json: { errors: user_id.errors.full_messages },
-  #     status: :unprocessable_entity   
-  #   end
-  # end
+    if user_id.destroy
+      render json: { message: "User successfully destroyed!" }
+    else
+      render json: { errors: user_id.errors.full_messages },
+      status: :unprocessable_entity   
+    end
+  end
 end
