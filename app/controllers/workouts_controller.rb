@@ -16,7 +16,7 @@ class WorkoutsController < ApplicationController
     workout = Workout.new(
       name: params["name"],
       description: params["description"],
-      user_id: params["user_id"],
+      user_id: current_user.id,
     )
     if workout.save
       render json: workout
@@ -32,6 +32,7 @@ class WorkoutsController < ApplicationController
 
     workout.name = params["name"] || workout.name
     workout.description = params["description"] || workout.description
+    workout.user_id = params["user_id"] || workout.user_id
 
     if workout.save
       render json: workout
