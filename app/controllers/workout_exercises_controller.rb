@@ -39,10 +39,11 @@ class WorkoutExercisesController < ApplicationController
     workout_exercise.reps = params["reps"] || workout_exercise.reps
     workout_exercise.weight = params["weight"] || workout_exercise.weight
     workout_exercise.notes = params["notes"] || workout_exercise.notes
-
+    
     if workout_exercise.save
       render json: workout_exercise
     else
+      p workout_exercise.errors.full_messages
       render json: {errors: workout_exercise.errors.full_messages}, 
       status: 422
     end
