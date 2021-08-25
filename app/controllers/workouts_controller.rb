@@ -2,7 +2,7 @@ class WorkoutsController < ApplicationController
   before_action :authenticate_user, except: [:index, :show]
 
   def index
-    workouts = Workout.all
+    workouts = Workout.order(created_at: :desc)
     render json: workouts
   end
 
