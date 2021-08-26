@@ -6,6 +6,11 @@ class WorkoutsController < ApplicationController
     render json: workouts
   end
 
+  def last_workout
+    workouts = Workout.last
+    render json: workouts
+  end
+
   def user_index
     workouts = Workout.where(user_id: current_user.id)
     render json: workouts
