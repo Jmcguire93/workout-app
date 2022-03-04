@@ -1,24 +1,3 @@
-# README
+# WorkoutApp
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Application I created using Ruby on Rails with a Vue.js frontend framework. This application was designed for users to be able to share, view and create workouts.
